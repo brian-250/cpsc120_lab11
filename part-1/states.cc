@@ -98,12 +98,8 @@ std::vector<State> ReadStates(const std::string& csv_filename) {
   //  - call ReadCSV to create a 2D vector of strings
   std::vector<std::vector<std::string>> table{ReadCSV(csv_filename, columns)};
   //  - loop through each row of the CSV
-    std::ifstream file(csv_filename);
-    if (!file.is_open()) {
-      std::cout << "Could not open the file " << csv_filename << ". Exiting.\n";
-    }
+    
   //    - skip the first row that contains a header
-    file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     
   //    - for all other rows:
   //      - get the name (as a string) from column 0
@@ -113,16 +109,6 @@ std::vector<State> ReadStates(const std::string& csv_filename) {
   //        convert the string to a double with std::stod
   //      - create a State object with the name, population, land area
   //      - add the State to your vector with push_back
-    std::string name;
-    std::string population;
-    std::string land_area;
-    while (file.good()) {
-      file.ignore(1, '"');
-      std::getline(file, name, '"');
-      name +=
-
-
-    }
 
   return std::vector<State>(); // TODO: replace this return statement with one that actually works
 }
