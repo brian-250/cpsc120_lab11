@@ -98,9 +98,31 @@ std::vector<State> ReadStates(const std::string& csv_filename) {
   //  - call ReadCSV to create a 2D vector of strings
   std::vector<std::vector<std::string>> table{ReadCSV(csv_filename, columns)};
   //  - loop through each row of the CSV
-    
   //    - skip the first row that contains a header
-    
+  std::string name{""};
+  std::string population{""};
+  std::string land_area{""};
+  int counter_row{0};
+  int counter_column{0};
+  for (std::string& element : table.at(counter_row)) {
+    if (element == (table.at(0).at(counter_column))) {
+      counter_column++;
+      continue;
+    }
+    while (!(element == table.at(0).at(counter_column)) {
+    if (element == table.at(counter_row).at(0)) {
+      name = element;
+    } if (element == table.at(counter_row).at(2)) {
+      population = element;
+      int population_num = stoi(population);
+    } if (element == table.at(counter_row).at(47)) {
+      land_area = element;
+      double land_area_num = stod(land_area);
+    }
+    counter_row++;
+    }
+    counter_column++;
+  }
   //    - for all other rows:
   //      - get the name (as a string) from column 0
   //      - get the population (as a string) from column 2
