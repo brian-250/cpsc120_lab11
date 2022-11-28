@@ -99,12 +99,19 @@ std::vector<State> ReadStates(const std::string& csv_filename) {
   std::vector<std::vector<std::string>> table{ReadCSV(csv_filename, columns)};
   //  - loop through each row of the CSV
   //    - skip the first row that contains a header
+  std::string this_row{""};
   std::string name{""};
   std::string population{""};
   std::string land_area{""};
-  for (int counter_column = 0; counter_column < table.size(); counter_column++) {
-    for (int counter_row = 0; counter_row < table.at(counter_row).size(); counter_row++) {
-      if (name == )
+  int counter_row{0};
+  int counter_column{0};
+  int row{0};
+  for (int column = 0; column < table.at(row).size(); column++) {
+    for (row = 0; row < table.size(); row++) {
+      if (this_row == (table.at(0).at(column))) {
+        continue;
+      }
+      if (this_row == table.at(colum))
     }
   }
   //    - for all other rows:
