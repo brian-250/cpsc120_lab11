@@ -103,23 +103,34 @@ std::vector<State> ReadStates(const std::string& csv_filename) {
   std::string name{""};
   std::string population{""};
   std::string land_area{""};
-  int counter_row{0};
-  int counter_column{0};
-  int row{0};
-  for (int column = 0; column < table.at(row).size(); column++) {
-    for (row = 0; row < table.size(); row++) {
+  //int populaton_num{0};
+  //double land_area_num{0.0};
+
+  for (int row = 0; row < table.size(); row++) {
+    for (int column = 0; column < table.at(row).size(); column++) {
+      this_row = table.at(row).at(column);
       if (this_row == (table.at(0).at(column))) {
         continue;
       }
-      if (this_row == table.at(colum))
+      // get the name (as a string) from column 0
+      if (this_row == table.at(row).at(0)) {
+        name = table.at(row).at(0);
+      // get the population (as a string) from column 2
+      // convert the string to an int with std::stoi
+      } if (this_row == table.at(row).at(2)) {
+        population = table.at(row).at(2);
+        int population_num = std::stoi(population);
+      // get the land area (as a string) from column 47
+      // convert the string to a double with std::stod
+      } if (this_row == table.at(row).at(47)) {
+        land_area = table.at(row).at(47);
+        double land_area_num = std::stod(land_area);
+      }
+      if ((row > 2) && (this_row == table.at(row).at(0))) {
+        State new_state(name, populaton_num, land_area_num);
+      }
     }
   }
-  //    - for all other rows:
-  //      - get the name (as a string) from column 0
-  //      - get the population (as a string) from column 2
-  //        convert the string to an int with std::stoi
-  //      - get the land area (as a string) from column 47
-  //        convert the string to a double with std::stod
   //      - create a State object with the name, population, land area
   //      - add the State to your vector with push_back
 
