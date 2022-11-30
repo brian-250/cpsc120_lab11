@@ -80,7 +80,7 @@ std::vector<State> ReadStates(const std::string& csv_filename) {
   //(if I don't need to initialize vector 'states', why do I need to initialize
   // 'columns'?) (if I initialize 'columns', does it affect what my vector
   // 'table' will look like?)
-  int columns = 0;
+  int columns = 48;
   // creating 2D vector 'table' by calling function ReadCSV()
   std::vector<std::vector<std::string>> table{ReadCSV(csv_filename, columns)};
 
