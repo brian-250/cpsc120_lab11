@@ -83,7 +83,7 @@ def make(target_dir, make_target):
             [cmd],
             capture_output=True,
             shell=True,
-            timeout=15,
+            timeout=120,
             check=False,
             text=True,
         )
