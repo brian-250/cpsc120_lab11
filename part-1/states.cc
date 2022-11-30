@@ -4,7 +4,7 @@
 // brianmilian@csu.fullerton.edu
 // @brian-250
 //
-// Lab 10-03
+// Lab 11-01
 // Partners: @engenies
 //
 // this file includes the constructors, getter methods, and methods for the
