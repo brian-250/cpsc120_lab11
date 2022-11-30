@@ -96,7 +96,7 @@ def make(target_dir, make_target):
     return status
 
 
-def build(file, target='asgt', compiletimeout=10):
+def build(file, target='asgt', compiletimeout=120):
     """Given a C++ source file, build with clang C++14 with -Wall
     and -pedantic. Output is 'asgt'. Binary is left on the file system."""
     logger = setup_logger()
